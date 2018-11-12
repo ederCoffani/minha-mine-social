@@ -1,0 +1,9 @@
+<div class="block ">
+  <div class="centered ">
+<%= posting_tag @posting.picture.thumb.url, class: "img-responsive" %>
+<%= @posting.description%>
+</div>
+<div id="post_<%= @posting.id %>_likes">
+  <%= render partial: "likes", locals: {posting: @posting} %>
+</div>
+</div>

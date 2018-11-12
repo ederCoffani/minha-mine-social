@@ -1,0 +1,15 @@
+
+  <div class='form-group'>
+    <% @posting = Posting.new %>
+    <%= form_for @posting, builder: CustomFormBuilder do |f| %>
+      <%= f.form_error %>
+      <%= f.label :description %><br>
+      <%= f.text_field :description, class: 'form-control' %>
+      <%= f.field_error :description%>
+      <br>
+      <%= f.label :picture %><br>
+      <%= f.file_field :picture %>
+      <br>
+      <%= f.submit 'Submit', :class => "btn btn-primary" %>
+    <% end %>
+  </div>

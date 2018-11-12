@@ -1,0 +1,20 @@
+<% if user_signed_in? && current_user.liked?%>
+      <div class="btn-group pull-left">
+          <%= link_to like_posting_path(posting.id), remote: true,
+           method: :put,
+           class: "glyphicon glyphicon-heart" do %>
+          Like
+          <span class="glyphicon glyphicon-heart"></span>
+          <%= posting.get_upvotes.size %>
+          <% end %>
+        </div>
+    <% else %>
+        <div class="btn-group pull-left">
+          <%= link_to unlike_posting_path(posting.id), remote: true,
+           method: :put,
+           class: "glyphicon glyphicon-heart" do %>
+          UnLike
+          <span class="glyphicon glyphicon-heart"></span>
+          <%= posting.get_downvotes.size %>
+          <% end %>
+  <% end %>

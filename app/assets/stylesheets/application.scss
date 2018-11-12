@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+ @import "bootstrap";
+
+  .home {
+    h3 {
+      color: #aa9c84;
+    }
+  }
+  .project-col {
+    margin-bottom: 1.5rem;
+  }
+  .project-card {
+    display: block;
+    color: #283c46;
+    background-color: #fff;
+    box-shadow: 0 1px 2px #aa9c84;
+    border-radius: 0px;
+    padding: 1.0rem;
+    height: 100%;
+
+    &:hover {
+      text-decoration: none;
+      color: #283c46;
+    }
+    h4 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+  }
+  }
+  main.container {
+    background-color: #fff;
+  }
+
+  @media (min-width: 48em) {
+    .container {
+
+
+    }
+  }
+  .background-container{
+    background-color: #dedede;
+  }
+  .margin-right {
+        margin-right: 5px;
+        text-align:center
+  }
+  .h1 {
+        margin-right:30px;
+        text-align:center
+  }
+  .block {
+    text-align: center;
+  }
+  .centered {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+}
+.round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+.externa {
+width: 400px;
+height: 400px;
+background: #ccc;
+display:table;
+}
+.interna {
+text-align: center;
+vertical-align:middle;
+display:table-cell;
+}

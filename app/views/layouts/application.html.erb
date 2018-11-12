@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AnimeSocial</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="background-container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="navbar-nav">
+      <a class="navbar-brand" href="#">AnimeSocial</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+
+          <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <%- if user_signed_in? %>
+                <div class="col-md-2 mr-auto" >
+                  <div class='round-image-50'>
+                      <%= image_tag current_user.avatar.thumb.url, class: 'img-responsive' %>
+                 </div>
+                </div>
+                <li class="nav-item">
+
+                  <h5 class="nav-link">Olá <%= current_user.name%></h5>
+                </li>
+                <li class="nav-item ">
+                  <a>|</a>
+                </li>
+                <li class="nav-item ">
+                  <a><%= link_to 'INICIO', postings_path, class: "nav-link" %></a>
+                </li>
+                <li class="nav-item ">
+                  <a>|</a>
+                </li>
+
+                <li class="nav-item ">
+                  <a><%= link_to 'PUBLICAÇÕES', home_index_path , class: "nav-link" %></a>
+                </li>
+                <li class="nav-item ">
+                  <a>|</a>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to 'SAIR', destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+                <% else %>
+                <li class="nav-item">
+                  <%= link_to 'ENTRAR', new_user_session_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'REGISTRAR-SE', new_user_registration_path, class: "nav-link" %>
+               </li>
+               <% end %>
+            </ul>
+          </div>
+
+
+</nav>
+
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+  </body>
+</html>
