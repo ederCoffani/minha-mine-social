@@ -1,6 +1,7 @@
 # README
 Projeto desenvolvido para fins de estudo.
-
+# Minha Social
+![Minha Social](minhasocial.png)
 Minha pequena rede social, com curiosidade de saber como se monta um sistema de social, fui em busca de
 conhecimento, a partir disso consegui montar do zero uma pequena parte do que um dia será uma rede social.
 
