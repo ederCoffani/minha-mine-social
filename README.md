@@ -2,7 +2,9 @@
 Projeto desenvolvido para fins de estudo.
 # Minha Social
 ![Minha Social](minhasocial.png)
-Minha pequena rede social, com curiosidade de saber como se monta um sistema de social, fui em busca de
+Minha pequena rede social.
+
+Com curiosidade de saber como se monta um sistema de rede social, fui em busca de
 conhecimento, a partir disso consegui montar do zero uma pequena parte do que um dia será uma rede social.
 
 A Social consiste nas gems devise para login inteligente, carrierwave para carregamento e upload, mini_magick para manipular os processamento dos tamanhos das imagens, acts_as_votable para facilitar a entrada da avaliação e votação nos posts de cada usuário e muito mais, foi implementado também o bootstrap para o designer do webapp, o aplicativo ainda esta em faze de desenvolvimento como a parte de adicionar amigos, compartilhar publicação, chat e outras funcionalidades.
