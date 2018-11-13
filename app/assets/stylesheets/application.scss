@@ -12,12 +12,11 @@
  *
 
  */
- @import "bootstrap";
+@import "bootstrap";
 
-  .home {
-    h3 {
+
+  .home h3 {
       color: #aa9c84;
-    }
   }
   .project-col {
     margin-bottom: 1.5rem;
@@ -38,10 +37,8 @@
     h4 {
     font-weight: bold;
     margin-bottom: 0.5rem;
-  }
-
-  p {
-  }
+  }p {
+    }
   }
   main.container {
     background-color: #fff;
