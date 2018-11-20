@@ -1,9 +1,19 @@
 # README
 Projeto desenvolvido para fins de estudo.
 # Minha Social
-![Minha Social](minhasocial.png)
-Minha pequena rede social.
 
+Minha pequena rede social.
+Tudo começou pequeno com uma simples vontade de estudar....
+![Minha Social](minhasocial.png)
+
+Logo dei uma melhorada....
+![Minha Social](minhasocial-inicio.png)
+
+Depois fui adicionando mais telas e funcionalidades....
+![Minha Social](minhasocial-publicacoes.png)
+
+E modificando designer....
+![Minha Social](minhasocial-card.png)
 Com curiosidade de saber como se monta um sistema de rede social, fui em busca de
 conhecimento, a partir disso consegui montar do zero uma pequena parte do que um dia será uma rede social.
 
