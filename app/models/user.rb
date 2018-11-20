@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates_processing_of :avatar
 
   acts_as_voter
-
+  acts_as_commontator
   private
   def avatar_size_validation
   errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes

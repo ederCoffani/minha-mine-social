@@ -1,10 +1,35 @@
 
 
-<div class="block ">
-  <div class="centered ">
-    <div class="card" style="width:400px">
-      <%= render 'form', style: "margin-left: 25px;"%>
+<div class="row">
+
+  <div class="primeiro" >
+    <div class="row">
+      <div class='round-image-50'>
+        <%= image_tag current_user.avatar.thumb.url, class: 'img-responsive' %>
+     </div>
+     <div class="">
+       <h6 class="nav-link"><%= current_user.name%></h6>
+     </div>
     </div>
-      <%= render @postings %>
+    <div class="">
+      Freed de Noticias
+    </div>
+    <div class="">
+      Jogos
+    </div>
+  </div>
+
+  <div class="segundo " id="meio" style="background-color=#FFF">
+    <div class="card" >
+      <%= render 'form', style: ""%>
+    </div>
+    <%= render @postings %>
+  </div>
+
+  <div class="terceiro">
+    <div class="card">
+      Solicitações de amizade
+    </div>
+
   </div>
 </div>

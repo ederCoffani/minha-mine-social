@@ -11,4 +11,5 @@ Rails.application.routes.draw do
       put "unlike", to:    "postings#downvote"
    end
 end
+  mount Commontator::Engine => '/commontator'
 end

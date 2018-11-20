@@ -1,11 +1,10 @@
 
 
  <% if user_signed_in? %>
+
+   <div class="">
      <h1 class="h1">PUBLICAÇÕES</h1>
-   <div class="row">
-       <div class="col-4">
-       </div>
-       <div class="col-8">
+       <div class="" style="margin-left: 45px">
 
          <div >
                 <ul class="nav">
@@ -24,20 +23,29 @@
                 </ul>
        </div>
    </div>
-   <div class="block ">
-     <div class="centered ">
-   <div class="container">
-     <div class="row">
+   <div class="">
+
+     <div class="segundo " id="meio" style="background-color=#FFF">
+       <div class="" >
        <%= render @postings%>
      </div>
+
+
      <% else %>
-       <div class="row">
+<div class="row">
+  <div class="primeiro" >
+    <div class="publicacao">
          Entre e faça parte desta rede social animei
        </div>
-     <div class="row">
-       <%= render @postings%>
-     </div>
+       <div class="">
+       <div class="segundo " id="meio" style="background-color=#FFF">
+
+         <%= render @postings%>
+
     <% end %>
+    </div>
   </div>
+</div>
+
 </div>
 </div>

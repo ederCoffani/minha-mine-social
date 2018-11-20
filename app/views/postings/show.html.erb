@@ -6,4 +6,5 @@
 <div id="post_<%= @posting.id %>_likes">
   <%= render partial: "likes", locals: {posting: @posting} %>
 </div>
+<%= commontator_thread(posting) %>
 </div>

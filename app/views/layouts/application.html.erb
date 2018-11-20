@@ -20,14 +20,13 @@
             <ul class="navbar-nav ml-auto">
 
                 <%- if user_signed_in? %>
-                <div class="col-md-2 mr-auto" >
+
                   <div class='round-image-50'>
                       <%= image_tag current_user.avatar.thumb.url, class: 'img-responsive' %>
                  </div>
-                </div>
                 <li class="nav-item">
 
-                  <h5 class="nav-link">Olá <%= current_user.name%></h5>
+                  <h6 class="nav-link">Olá <%= current_user.name%></h6>
                 </li>
                 <li class="nav-item ">
                   <a>|</a>
@@ -49,6 +48,9 @@
                 <li class="nav-item">
                   <%= link_to 'SAIR', destroy_user_session_path, method: :delete, class: "nav-link" %>
                 </li>
+
+
+
                 <% else %>
                 <li class="nav-item">
                   <%= link_to 'ENTRAR', new_user_session_path, class: "nav-link" %>
@@ -59,7 +61,6 @@
                <% end %>
             </ul>
           </div>
-
 
 </nav>
 

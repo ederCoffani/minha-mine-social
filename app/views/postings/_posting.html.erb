@@ -1,24 +1,33 @@
-<hr style="width:400px">
+<hr style="">
 
-<div class="card" style="width:400px">
+<div class="card" style="">
 <figure class="figure">
 
     <!--<img src="https://getuikit.com/v2/docs/images/placeholder_600x400.svg" class="figure-img img-fluid rounded">-->
 <% if user_signed_in? %>
-    <div class="row home-header" style="margin-left:0px;">
-      <div class="col-md-2 mr-auto" >
+    <div class="row " >
+      <div class="col-md-1 "style="margin-top:10px; margin-left:10px; margin-right:10px;" >
         <div class='round-image-50'>
             <%= image_tag posting.user.avatar.thumb.url, class: 'img-responsive' %>
        </div>
       </div>
 
-      <div class="col-md-4 " style="margin-right:60px;">
-        <h4 class="text-left " ><%= posting.user.name %></h4>
+      <div class="nomeUserCard" style="">
+        <h4 class="text "  style='font-size: 15px;'><%= posting.user.name %></h4>
+        <h4 class="text "  style='font-size: 10px;'><%= posting.created_at %>
+                 <span class="icon" style="" >
+                  <i class="fa fa-history"></i></span></h4>
       </div>
 
-      <div class="col-md-4 ml-auto-responsive" >
-        <a class="btn btn-outline-light "   data-toggle="dropdown"   style="margin-left:25px;">
-          <span class="caret" style="" >...</span>
+      <div class="menuCard" style="" >
+        <a class="btn btn-outline  "   data-toggle="dropdown"   >
+
+          <span class="icon" style="" >
+
+            <i class="fa fa-ellipsis-h">
+
+            </i></span>
+
         </a>
           <ul class="dropdown-menu">
             <li>
@@ -28,40 +37,72 @@
               <a><%= link_to 'Delete', posting, method: :delete, data: { confirm: 'Are you sure you want to delete this post?'}%></a>
             </li>
           </ul>
+
       </div>
-      </div>
-      <div class="col-md-4 mr-auto" style="margin-left:5px;">
+
+      </div><hr>
+
+
+      <div class="descricaoCard" style="">
         <h6 class="text-left ">  <%= posting.description %></h6>
       </div>
 
-    <%= image_tag posting.picture.thumb.url, class: "img-responsive" %>
-    <hr>
+      <div class="img-posting" style="" >
+        <div class=" col-md-12 mr-auto sobreposicao">
 
- <div class="row home-header" style="margin-left:15px;">
+        </div>
+        <div class="" >
+          <%= image_tag posting.picture.thumb.url, class: "img-responsive" %>
+        </div>
 
-   <div class="level-item likes">
-    <% if user_signed_in? %>
-      <% if current_user.liked? posting %>
-        <%= link_to unlike_posting_path(posting), method: :put, remote: true, class: "unlike_shot" do %>
-          <span class="icon"><i class="fa fa-heart has-text-primary"></i>Like</span>
-          <span class="vote_count"><%= posting.get_upvotes.size %></span>
-        <% end %>
-      <% else %>
-        <%= link_to like_posting_path(posting), method: :put, remote: true, class: "like_shot" do %>
-          <span class="icon"><i class="fa fa-heart"></i>Like</span>
-          <span class="vote_count"><%= posting.get_upvotes.size  %></span>
-        <% end %>
-      <% end %>
-      <% end %>
-  </div>
+      </div>
 
-    <div class="interna" >
-        <h6 class="text-left " style="margin-left:50px;">COMENTAR</h6>
+          <span class="vote_count"><%= posting.get_upvotes.size  %> like</span>
+      <hr>
+<div class=" row" style="">
+      <div class="primeira"  style="margin-left: 30px">
+        <div class="level-item likes">
+           <% if user_signed_in? %>
+             <% if current_user.liked? posting %>
+              <%= link_to unlike_posting_path(posting), method: :put, remote: true, class: "unlike_shot" do %>
+                <span class="icon" style=" ">
+                  <i class="fa fa-heart has-text-primary " style=" ">Curtir</i>
+                </span>
+              <% end %>
+            <% else %>
+              <%= link_to like_posting_path(posting), method: :put, remote: true, class: "like_shot" do %>
+                <span class="icon" style="color:#808080">
+                  <i class="fa fa-heart-o " style="">Curtir</i>
+                </span>
+              <% end %>
+            <% end %>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="segunda" style="margin-left: 30px">
+        <div class="row">
+          <div class="">
+            <span class="icon"><i class="fa fa-commenting-o" style=" "></i>
+            </span>
+          </div>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <a href="javascript:abreFecha('#thread_6_comment_list_div')">Comentar</a>
+
+          <div id='thread_6_comment_list_div'><%= commontator_thread(posting) %>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="terceira text-right" style="margin-left: 50px;">
+          <span class="icon"><i class="fa fa-share" >Compartilhar</i></span>
+      </div>
     </div>
-    <div class="interna " >
-        <h6 class="text-left " style="margin-left:35px;">COMPARTILHAR</h6>
-    </div>
-</div>
+
 
 
   <figcaption class="figure-caption">
@@ -76,11 +117,25 @@
         </ul>
       </div>
   </figcaption>
-      <% else %>
-        <%= posting.description %>
-        <%= image_tag posting.picture.thumb.url, class: "figure-img img-fluid rounded" %>
-  <% end %>
 
 
 </figure>
+<% else %>
+<div class=" " >
+
+  <div class="descricaoCard">
+    <h6 class="text-left ">  <%= posting.description %></h6>
   </div>
+  <div class="img-posting" style="" >
+    <div class=" col-md-12 mr-auto sobreposicao">
+
+    </div>
+    <div class="" >
+      <%= image_tag posting.picture.thumb.url, class: "img-responsive" %>
+    </div>
+      <span class="vote_count"><%= posting.get_upvotes.size  %> like</span>
+  </div>
+
+</div>
+<% end %>
+</div>

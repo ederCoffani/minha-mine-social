@@ -10,10 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
+*= require font-awesome
+*= require commontator/application
  */
 @import "bootstrap";
-
+@import 'bootstrap/glyphicons';
 
   .home h3 {
       color: #aa9c84;
@@ -21,34 +22,20 @@
   .project-col {
     margin-bottom: 1.5rem;
   }
-  .project-card {
-    display: block;
-    color: #283c46;
-    background-color: #fff;
-    box-shadow: 0 1px 2px #aa9c84;
-    border-radius: 0px;
-    padding: 1.0rem;
-    height: 100%;
 
-    &:hover {
-      text-decoration: none;
-      color: #283c46;
-    }
-    h4 {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }p {
-    }
-  }
   main.container {
     background-color: #fff;
   }
 
   @media (min-width: 48em) {
-    .container {
-
-
-    }
+      .container {
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center
+        }
   }
   .background-container{
     background-color: #dedede;
@@ -70,9 +57,8 @@
     width: 300px;
 }
 .round-image-50 {
-    background-color: white;
-    border: 1px solid #d9d9d9;
-    border-radius: 25px;
+    background-color: #000000;
+    border-radius: 10px;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
     height: 50px;
@@ -80,6 +66,13 @@
     overflow: hidden;
     text-align: center;
     img { width: 100% }
+}
+.img-posting{
+    img { width: 100%
+     }
+}
+.card{
+   background-color: rgba(245, 245, 245, 0.90);
 }
 .externa {
 width: 400px;
@@ -91,4 +84,92 @@ display:table;
 text-align: center;
 vertical-align:middle;
 display:table-cell;
+}
+.sobreposicao {
+  border: 1px solid #000;
+  text-align: center;
+  margin-top: -10px;
+  margin-left: 25px;
+  position:absolute;
+  z-index:-1;
+}
+.descricaoCard{
+  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.nomeUserCard{
+  margin-top:15px;
+  margin-left:23px;
+}
+
+/** Valor no "max-width" só para ilustrar */
+@media screen and (max-width: 96em) {
+    .sobreposicao {
+      width: 8.75%;
+      height: 20%;
+     }
+
+}
+@media screen and (max-width: 123em) {
+    .sobreposicao {
+      width: 17.5%;
+      height: 20%;
+     }
+
+}
+
+@media screen and (max-width: 456em) {
+    .sobreposicao {
+      width: 35%;
+      height: 20%;
+     }
+     .menuCard{
+       width: 55%;
+       text-align: right!important;
+     }
+
+}
+
+@media screen and (max-width: 789em) {
+    .sobreposicao {
+        width: 90%;
+        height: 20%;
+     }
+     .menuCard{
+       width: 55%;
+       margin-top:15px;
+       text-align: right!important;
+     }
+}
+hr {
+    margin-top: 0.50rem;
+    margin-bottom: 0rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.primeiro {
+  width: 150px;
+  h6{
+    width: 100%;
+  }
+  .publicacao{
+  width: 500px;
+  }
+
+}
+.segundo{
+  width: 450px;
+  height: 600px;
+  float: left;
+  .row{
+      }
+  #thread_6_comment_list_div {
+      display: none;
+  }
+}
+.terceiro {
+  margin-left: 10px;
+  float: right;
 }
