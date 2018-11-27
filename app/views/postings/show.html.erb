@@ -1,10 +1,29 @@
 <div class="block ">
   <div class="centered ">
-<%= posting_tag @posting.picture.thumb.url, class: "img-responsive" %>
-<%= @posting.description%>
+  <%= image_tag @posting.picture.thumb.url, class: "img-responsive" %>
+  <%= @posting.description%>
 </div>
 <div id="post_<%= @posting.id %>_likes">
-  <%= render partial: "likes", locals: {posting: @posting} %>
+  <span class="vote_count"><%= @posting.get_upvotes.size  %> like</span>
 </div>
-<%= commontator_thread(posting) %>
+
+    <div class='form-group'>
+        <%= render 'comments/form' %>
+      
+
+      <h2>Add a comment:</h2>
+
+      <%= form_for ([@posting, @posting.comments.build]) do |f| %>
+       <p> <%= f.label :comment %>
+         <br>
+          <%= f.text_field :comment %> </p>
+           <br>
+           <%= f.submit %>
+      <% end %>
+
+      <%= link_to 'Edit', edit_posting_path(@posting) %>
+      <%= link_to 'Back', postings_path %>
+
+    </div>
+
 </div>

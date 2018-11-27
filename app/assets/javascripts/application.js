@@ -18,5 +18,24 @@
 //= require bootstrap-sprockets
 //= require_tree .
 function abreFecha(sel) {
+  $("id").hide()
   $(sel).slideToggle();
 }
+scrollToBottom = function () {
+  var relative = document.getElementById("relative");
+  relative.scrollTop = relative.scrollHeight;
+};
+scrollToBottom();
+
+
+jQuery.fn.submitOnCheck = function() {
+    this.find('input[type=submit]').remove();
+    this.find('input[type=checkbox]').click(function() {
+        $(this).parent('form').submit();
+    });
+    return this;
+}
+
+$(function() {
+    $('.commentecampo').submitOnCheck();
+});

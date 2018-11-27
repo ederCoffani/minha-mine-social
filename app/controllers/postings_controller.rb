@@ -12,7 +12,10 @@ class PostingsController < ApplicationController
     end
 
     def new
+
       return redirect_to posting_params
+
+
 
     end
 
@@ -44,8 +47,10 @@ class PostingsController < ApplicationController
     end
 
     def destroy
+      @posting = Posting.find(params[:id])
       @posting.destroy
-      redirect_to posting_params
+
+      redirect_to postings_path
     end
 
     def upvote

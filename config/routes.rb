@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :postings do
+    resources :comments
     member do
       put "like", to:    "postings#upvote"
       put "unlike", to:    "postings#downvote"
    end
 end
-  mount Commontator::Engine => '/commontator'
+
 end

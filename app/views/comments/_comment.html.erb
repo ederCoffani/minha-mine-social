@@ -1,0 +1,24 @@
+
+<div class="" id="edit_comment_<%= comment.id %>">
+  <div class="comentarioUsuario">
+    <div class="col-md-1 "style="" >
+      <div class='round-image-50' >
+          <%= image_tag comment.user.avatar.thumb.url, class: 'img-responsive' %>
+      </div>
+    </div>
+  </div>
+  <div class=" ">
+    <p > <strong class="comentarionome" id=""><%= comment.user.name %>:</strong> <%= comment.comment %></p>
+  </div>
+
+<% if current_user.id == comment.user.id%>
+  <div style="margin-left: 33px; font-size: 12px;" >
+    <%= link_to "(remove)", [comment.posting, comment], method: :delete ,remote: true , class: "delete" %>
+  </div>
+<% else %>
+  <div style="font-size: 12px;">
+    <p>Ocutar comentario</p>
+  </div>
+  <% end %>
+  <hr>
+</div>

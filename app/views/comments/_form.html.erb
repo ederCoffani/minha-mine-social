@@ -1,0 +1,8 @@
+<div class='form-group'>
+<% @posting = Posting.new %>
+  <% @posting.comments.each do |comment| %>
+   <p> <strong>Comment:</strong> <%=  %> </p>
+   <h6 class="text-left ">  <%= comment.comment %></h6>
+  <% end %>
+
+</div>

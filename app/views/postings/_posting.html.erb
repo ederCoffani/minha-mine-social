@@ -1,10 +1,11 @@
 <hr style="">
-
+<% @posting = Posting.new %>
 <div class="card" style="">
 <figure class="figure">
 
     <!--<img src="https://getuikit.com/v2/docs/images/placeholder_600x400.svg" class="figure-img img-fluid rounded">-->
 <% if user_signed_in? %>
+<%=  %>
     <div class="row " >
       <div class="col-md-1 "style="margin-top:10px; margin-left:10px; margin-right:10px;" >
         <div class='round-image-50'>
@@ -13,8 +14,8 @@
       </div>
 
       <div class="nomeUserCard" style="">
-        <h4 class="text "  style='font-size: 15px;'><%= posting.user.name %></h4>
-        <h4 class="text "  style='font-size: 10px;'><%= posting.created_at %>
+        <h4 class="text"  style='font-size: 15px;'><%= posting.user.name %></h4>
+        <h4 class="text"  style='font-size: 10px;'><%= posting.created_at %>
                  <span class="icon" style="" >
                   <i class="fa fa-history"></i></span></h4>
       </div>
@@ -58,6 +59,7 @@
       </div>
 
           <span class="vote_count"><%= posting.get_upvotes.size  %> like</span>
+          <span class="vote_count" ><%= posting.comments.count %> Comentarios</span>
       <hr>
 <div class=" row" style="">
       <div class="primeira"  style="margin-left: 30px">
@@ -80,30 +82,37 @@
         </div>
       </div>
 
-      <div class="segunda" style="margin-left: 30px">
+      <div class="segunda" id="meio" style="margin-left: 100px">
         <div class="row">
           <div class="">
+
             <span class="icon"><i class="fa fa-commenting-o" style=" "></i>
             </span>
-          </div>
+
 
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-          <a href="javascript:abreFecha('#thread_6_comment_list_div')">Comentar</a>
-
-          <div id='thread_6_comment_list_div'><%= commontator_thread(posting) %>
-
-          </div>
+          <a href="javascript:abreFecha('#comment')">Comentar</a>
 
         </div>
-
       </div>
-
-      <div class="terceira text-right" style="margin-left: 50px;">
+    </div>
+      <div class="terceira " style="margin-left: 100px">
           <span class="icon"><i class="fa fa-share" >Compartilhar</i></span>
       </div>
     </div>
+<hr>
+        <div class="comente" id="relative">
+          <%= render posting.comments %>
+        </div>
 
-
+        <div class="" >
+          <%= form_for ([posting, posting.comments.build]) do |f| %>
+              <%= f.text_field :comment, class: 'commentecampo',ajax: "true", placeholder: '*Digite comentarios aqui'  %>
+              <%= button_tag( :class => "button_green") do %>
+                <i class="fa fa-send-o"></i>
+              <% end %>
+          <% end %>
+        </div>
 
   <figcaption class="figure-caption">
       <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarNavPost">
